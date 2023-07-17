@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>ListenPass - Vérification des documents officiels Listenbourgeois</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <script defer src="index.js"></script>
+    <script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+  <body>
+    <header>
+      <div class="Logo"></div>
+      <a href="https://listenbourg.org">listenbourg.org</a>
+    </header>
+
+    <main>
+      <div class="vbox">
+        <div class="hbox">
+          <div class="upload-container" onclick="document.querySelector('#passport-upload').click();" ondrop="handleFileDrop(event);" ondragover="handleDragOver(event);">
+            <input type="file" name="passport-upload" id="passport-upload">
+          </div>
+          <div class="separator"></div>
+          <div class="input-container">
+            <input id="passport-base-input" type="text" placeholder="Passeport encodé en base64">
+          </div>
+        </div>
+
+        <button class="check-btn">Vérifier le passeport</button>
+      </div>
+
+      <div class="result-container"></div>
+    </main>
+  </body>
+</html>
