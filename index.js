@@ -12,7 +12,6 @@ checkBtn.onclick = () => {
   let passportBase = document.querySelector("#passport-base-input").value;
 
   if (passportBase == "") {
-    //check qr code from image upload
     let imageFile = document.querySelector("#passport-upload").files[0];
     if (imageFile == undefined) {
       return;
@@ -80,7 +79,7 @@ function passportResult(checkResult, passportInfo) {
   passportNumLabel.innerText = "Numéro de passeport: ";
   passportNum.appendChild(passportNumLabel);
 
-  let passportNumContent = document.createElement("div");
+  let passportNumContent = document.createElement("span");
   passportNumContent.innerText = passportInfo[1];
   passportNum.appendChild(passportNumContent);
 
@@ -93,7 +92,7 @@ function passportResult(checkResult, passportInfo) {
   passportNameLabel.innerText = "Nom: ";
   passportName.appendChild(passportNameLabel);
 
-  let passportNameContent = document.createElement("div");
+  let passportNameContent = document.createElement("span");
   passportNameContent.innerText = passportInfo[3] + " " + passportInfo[2];
   passportName.appendChild(passportNameContent);
 
@@ -108,7 +107,7 @@ function passportResult(checkResult, passportInfo) {
 
   let bDayString = frenchDateStringFromShorthand(passportInfo[4]);
 
-  let passportBDayContent = document.createElement("div");
+  let passportBDayContent = document.createElement("span");
   passportBDayContent.innerText = bDayString;
   passportBDay.appendChild(passportBDayContent);
 
@@ -123,7 +122,7 @@ function passportResult(checkResult, passportInfo) {
 
   let expirationString = frenchDateStringFromShorthand(passportInfo[8]);
 
-  let passportExpirationContent = document.createElement("div");
+  let passportExpirationContent = document.createElement("span");
   passportExpirationContent.innerText = expirationString;
   passportExpiration.appendChild(passportExpirationContent);
 
